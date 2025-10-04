@@ -1,1 +1,90 @@
-index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admit Card Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      background: #25d366;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .form-box button:hover {
+      background: #20b958;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Admit Card Request</h2>
+    <form id="admitForm">
+      <input type="text" id="name" placeholder="Enter your Name" required>
+      <input type="text" id="roll" placeholder="Enter your Roll No" required>
+      <input type="text" id="class" placeholder="Enter your Class" required>
+      <input type="text" id="phone" placeholder="Enter your Phone Number" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("admitForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Collect inputs
+      let name = document.getElementById("name").value;
+      let roll = document.getElementById("roll").value;
+      let sclass = document.getElementById("class").value;
+      let phone = document.getElementById("phone").value;
+
+      // WhatsApp API link
+      let adminNumber = "919547759837"; // country code + number
+      let message = `Admit Card Request:\n\nName: ${name}\nRoll No: ${roll}\nClass: ${sclass}\nPhone: ${phone}`;
+
+      let whatsappURL = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+
+      // Open WhatsApp
+      window.open(whatsappURL, "_blank");
+
+      // Show popup message
+      alert("We will connect you shortly with your admit. Thank you!");
+      
+      // Reset form
+      document.getElementById("admitForm").reset();
+    });
+  </script>
+</body>
+</html>
+```
