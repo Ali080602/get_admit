@@ -95,20 +95,21 @@
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: #2062a7;
+    background: hsl(140, 68%, 39%);
     color: #fff;
     padding: 18px 32px 18px 18px;
     border-radius: 9px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.22);
-    font-size: 17px;
+    font-size: 14px;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.45s cubic-bezier(0.45,0.05,0.55,0.95), top 0.4s;
     display: flex;
     align-items: center;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 90%;
+    white-space: nowrap;
   }
   .popup-message.show {
     opacity: 1;
@@ -116,11 +117,11 @@
     top: 60px;
   }
   .popup-message .close-btn {
-    margin-left: 14px;
-    background: none;
-    border: none;
+    margin-left: 65%;
+    background: red;
+    border: white;
     color: #ffdedb;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     line-height: 1;
@@ -129,7 +130,7 @@
   }
   .popup-message .close-btn:hover {
     opacity: 1;
-    color: #fff;
+    color: white;
   }
 
     /* Responsive */
@@ -222,9 +223,9 @@ document.getElementById("admitForm").addEventListener("submit", function(e) {
   let popup = document.createElement("div");
   popup.className = "popup-message";
   popup.innerHTML = `
-    <span>Request submitted successfully.<br>Our team will connect with you soon. Thank you!</span>
-    <button class="close-btn" title="Close">&times;</button>
-  `;
+  <div>Request submitted successfully.<br>Our team will connect with you soon. Thank you!</div>
+  <button class="close-btn" title="Close">&times;</button>
+`;
   document.body.appendChild(popup);
 
   setTimeout(() => popup.classList.add("show"), 100);
@@ -235,11 +236,11 @@ document.getElementById("admitForm").addEventListener("submit", function(e) {
     setTimeout(() => popup.remove(), 500); // remove from DOM after fade
   });
 
-  // Auto-close after 6 seconds
+  // Auto-close after 40 seconds
   setTimeout(() => {
     popup.classList.remove("show");
     setTimeout(() => popup.remove(), 500);
-  }, 6000);
+  }, 40000);
 
   document.getElementById("admitForm").reset();
 });
