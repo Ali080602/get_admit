@@ -170,7 +170,7 @@
   </div>
 
   <script>
-const scriptURL = "YOUR_WEB_APP_URL"; // paste your Apps Script Web App URL here
+const scriptURL = "AKfycbw4JUFTa-73exr1be_JTVXOG5PqzpHTks-PUP8MWO45zDNRb5eQ61Q6c2WXybtz6jB-3Q"; // paste your Apps Script Web App URL here
 
 document.getElementById("admitForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -191,7 +191,7 @@ document.getElementById("admitForm").addEventListener("submit", async (e) => {
     const photoBase64 = reader.result;
 
     // Send data to Google Apps Script
-    await fetch(AKfycbw4JUFTa-73exr1be_JTVXOG5PqzpHTks-PUP8MWO45zDNRb5eQ61Q6c2WXybtz6jB-3Q, {
+    await fetch(scriptURL, {
       method: "POST",
       body: JSON.stringify({ name, father, sclass, dob, address, phone, photo: photoBase64 }),
       headers: { "Content-Type": "application/json" }
