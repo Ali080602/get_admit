@@ -118,7 +118,7 @@
 <body>
   <div class="container">
     <h2>Admit Request Form</h2>
-    <form id="admitForm">
+    <form id="admitForm" method="POST" enctype="https://script.google.com/macros/s/AKfycbwSxoLjHY4wTBDzQspl8YJK1Zr-qY7p3Z-sKjs6ZJNGioC87jYeomOm7XMBvrLR8ZMokA/exec">
       <div class="form-group">
         <label for="name">Student Name</label>
         <input type="text" id="name" required />
@@ -151,9 +151,10 @@
         <input type="tel" id="phone" required />
       </div>
       <div class="form-group">
-        <label for="photo">Upload Student Photo</label>
-        <input type="file" id="photo" accept="image/*" required />
-      </div>
+  <label for="photo">Student Photo</label>
+  <input type="file" id="photo" name="photo" accept="image/*" required>
+</div>
+
       <button type="submit">Submit Request</button>
     </form>
 
@@ -170,7 +171,7 @@
   </div>
 
   <script>
-const scriptURL = "AKfycbw4JUFTa-73exr1be_JTVXOG5PqzpHTks-PUP8MWO45zDNRb5eQ61Q6c2WXybtz6jB-3Q"; // paste your Apps Script Web App URL here
+const scriptURL = "https://script.google.com/macros/s/AKfycbwSxoLjHY4wTBDzQspl8YJK1Zr-qY7p3Z-sKjs6ZJNGioC87jYeomOm7XMBvrLR8ZMokA/exec"; // paste your Apps Script Web App URL here
 
 document.getElementById("admitForm").addEventListener("submit", async (e) => {
   e.preventDefault();
